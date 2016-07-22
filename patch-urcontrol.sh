@@ -7,7 +7,6 @@ log_exec() {
 	"$@"
 }
 
-echo "Setting library path."
 if ! log_exec patchelf --set-rpath "$dir/lib" ./URControl; then
 	echo "Failed to set ./URControl rpath. Please fix manually."
 fi

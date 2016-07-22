@@ -33,7 +33,16 @@ setup_robot() {
 	done
 
 	log_exec ln -sf "../ur-serial.$robot_type" "$robot_type/ur-serial"
+}
 
+extract_deb() {
+	archive="$1"
+	shift
+	ar p "$archive" data.tar.gz | tar xz "$@"
+}
+
+install_dep() {
+	log_exec extract_deb "ursim-dependencies/$1" -C lib --wildcards './opt/*/lib/*' --strip-components 4
 }
 
 echo "Setting up UR3."
@@ -53,6 +62,13 @@ defuse "install.sh"
 defuse "start-ursim.sh"
 defuse "starturcontrol.sh"
 defuse "stopurcontrol.sh"
+echo
 
+echo "Extracting libraries from dependencies."
+log_exec mkdir -p lib
+install_dep "libxmlrpc-c-ur_1.33.14_amd64.deb"
+echo ""
+
+echo "Patching URControl."
 ./patch-urcontrol.sh
 echo
