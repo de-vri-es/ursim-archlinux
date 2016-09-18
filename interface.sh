@@ -13,5 +13,5 @@ HOME="$URSIM_ROOT" java \
 	-Duser.home="$URSIM_ROOT" \
 	-Dconfig.path="$URSIM_ROOT/.urcontrol" \
 	-Durcontrol.path="/bin/true" \
-	-Djava.library.path="$URSIM_ROOT/../GUI/bundle:/jre/lib/amd64:/usr/lib/jni" \
+	-Djava.library.path="$URSIM_ROOT/../GUI/bundle:/usr/lib/jvm/default/jre/lib/amd64/:/jre/lib/amd64:/usr/lib/jni" \
 	-jar "$GUI_ROOT/bin/felix.jar"
