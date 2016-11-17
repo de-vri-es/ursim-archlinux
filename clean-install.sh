@@ -1,6 +1,5 @@
 #!/bin/sh
-dir="$(dirname $(readlink -f $0))"
-cd "$dir"
+script_dir="$(dirname $(readlink -f $0))"
 
 log_exec() {
 	echo "$@"
@@ -69,6 +68,11 @@ log_exec mkdir -p lib
 install_dep "libxmlrpc-c-ur_1.33.14_amd64.deb"
 echo ""
 
+echo "Copying run scripts."
+log_exec cp "$script_dir/controller.sh" ./
+log_exec cp "$script_dir/interface.sh" ./
+echo
+
 echo "Patching URControl."
-./patch-urcontrol.sh
+"$script_dir/patch-urcontrol.sh"
 echo
