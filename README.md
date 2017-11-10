@@ -10,7 +10,12 @@ Finally, the scripts patch the controller with `patchelf` and `setcap` to enable
 
 # Dependencies
 
-You need to have `java3d` installed. On Arch Linux this can be done by installing `java3d` for the AUR [[2]](https://aur.archlinux.org/packages/java3d/).
+The controller (`URControl`) is a 32-bit executable.
+That means you need a 32 bit runtime to be able to run it.
+On Arch Linux this means you need to enable to `multilib` repository [[2]](https://wiki.archlinux.org/index.php/multilib).
+`URControl` itself needs atleast `gcc-libs-multilib` and `lib32-curl`.
+
+You need to have `java3d` installed. On Arch Linux this can be done by installing `java3d` for the AUR [[3]](https://aur.archlinux.org/packages/java3d/).
 If you install `java3d` by some other means, it may be necessary to modify the `-Djava.library.path` in `interface.sh` so that the library can be found when launching the interface.
 
 The install script uses `patchelf` to modify the `RPATH` of the controller with an absolute path to the unpacked `.deb` packages.
@@ -57,4 +62,5 @@ $ursim_archlinux/patch-controller.sh
 
 # Links
 - [[1] https://www.universal-robots.com/download/](https://www.universal-robots.com/download/)
-- [[2] https://aur.archlinux.org/packages/java3d/](https://aur.archlinux.org/packages/java3d/)
+- [[2] https://wiki.archlinux.org/index.php/multilib](https://wiki.archlinux.org/index.php/multilib)
+- [[3] https://aur.archlinux.org/packages/java3d/](https://aur.archlinux.org/packages/java3d/)
