@@ -16,7 +16,7 @@ On Arch Linux this means you need to enable to `multilib` repository [[2]](https
 `URControl` itself needs atleast `gcc-libs-multilib` and `lib32-curl`.
 
 For the PolyScope interface to work, you need to have `java3d` installed.
-On Arch Linux this can be done by installing `java3d` for the AUR [[3]](https://aur.archlinux.org/packages/java3d/).
+On Arch Linux this can be done by installing `java3d` from the AUR [[3]](https://aur.archlinux.org/packages/java3d/).
 If you install `java3d` by some other means, it may be necessary to modify the `-Djava.library.path` in `interface.sh` so that the library can be found when launching the interface.
 
 The install script uses `patchelf` to modify the `RPATH` of the controller with an absolute path to the unpacked `.deb` packages.
