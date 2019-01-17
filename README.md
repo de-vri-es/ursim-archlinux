@@ -13,7 +13,7 @@ Finally, the scripts patch the controller with `patchelf` and `setcap` to enable
 The controller (`URControl`) is a 32-bit executable.
 That means you need a 32 bit runtime to be able to run it.
 On Arch Linux this means you need to enable to `multilib` repository [[2]](https://wiki.archlinux.org/index.php/multilib).
-`URControl` itself needs atleast `gcc-libs-multilib` and `lib32-curl`.
+`URControl` itself needs atleast `lib32-gcc-libs` and `lib32-curl`.
 
 For the PolyScope interface to work, you need to have `java3d` installed.
 On Arch Linux this can be done by installing `java3d` from the AUR [[3]](https://aur.archlinux.org/packages/java3d/).
