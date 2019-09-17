@@ -16,6 +16,9 @@ On Arch Linux this means you need to enable to `multilib` repository [[2]](https
 `URControl` itself needs atleast `lib32-gcc-libs` and `lib32-curl`.
 
 For the PolyScope interface to work, you need to have `java3d` installed.
+And you must use version `8` of `jre`, you can install `jre8-openjdk`.
+Then you can execute `archlinux-java set java-8-openjdk` in shell to set the default java env if you installed multiple version of java,
+or you can add `export PATH=/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH` in `interface.sh`.
 On Arch Linux this can be done by installing `java3d` from the AUR [[3]](https://aur.archlinux.org/packages/java3d/).
 If you install `java3d` by some other means, it may be necessary to modify the `-Djava.library.path` in `interface.sh` so that the library can be found when launching the interface.
 
