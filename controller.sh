@@ -4,6 +4,7 @@ ROBOT_TYPE="UR5"
 [[ "$1" == "UR10" ]] && ROBOT_TYPE="UR10"
 [[ "$1" == "UR3"  ]] && ROBOT_TYPE="UR3"
 
+export LD_LIBRARY_PATH=$(dirname $(readlink -f $0))/lib:$LD_LIBRARY_PATH
 URSIM_ROOT="$(dirname $(readlink -f $0))/$ROBOT_TYPE"
 
 cd $URSIM_ROOT
