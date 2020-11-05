@@ -32,6 +32,8 @@ setup_robot() {
 	done
 
 	log_exec ln -sf "../ur-serial.$robot_type" "$robot_type/ur-serial"
+
+  cp "metadata.n3" "$robot_type"
 }
 
 extract_deb() {
