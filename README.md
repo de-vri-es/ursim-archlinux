@@ -10,6 +10,15 @@ Finally, the scripts patch the controller with `patchelf` and `setcap` to enable
 
 # Dependencies
 
+```
+patchelf
+lib32-gcc-libs
+lib32-curl
+openbsd-netcat
+java3d
+jre8-openjdk
+```
+
 The controller (`URControl`) is a 32-bit executable.
 That means you need a 32 bit runtime to be able to run it.
 On Arch Linux this means you need to enable to `multilib` repository [[2]](https://wiki.archlinux.org/index.php/multilib).
