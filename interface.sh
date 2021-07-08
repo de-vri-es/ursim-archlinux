@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH=/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH
+
 ROBOT_TYPE="UR5"
 [[ "$1" == "UR10" ]] && ROBOT_TYPE="UR10"
 [[ "$1" == "UR3"  ]] && ROBOT_TYPE="UR3"
