@@ -24,7 +24,7 @@ function on_sigint {
 trap on_sigint SIGINT
 
 #Start the controller
-HOME="$URSIM_ROOT" ../URControl &
+HOME="$URSIM_ROOT" ../URControl -r &
 controller_pid=$!
 sleep 1
 
